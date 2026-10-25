@@ -1,5 +1,11 @@
 # vue3-rabbit
 
+> **📌声明**
+
+> 本项目是跟随 [黑马程序员前端Vue3小兔鲜电商项目实战，vue3全家桶从入门到实战电商项目一套通关](https://www.bilibili.com/video/BV1Ac411K7EQ/?p=25&share_source=copy_web&vd_source=4e02d7310ef8d75ceabc875979410cd1) 进行学习的跟练项目，并非本人原创。
+
+> 代码主要用于个人学习记录，原教程版权归原作者所有。
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
