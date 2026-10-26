@@ -18,7 +18,7 @@ getHotList();
           <!-- 原来似乎是图片懒加载，但是我懒得去弄清楚，所以先用src替代
             <img v-img-lazy="item.picture" alt="">
            -->
-          <img :src="item.picture" alt="" />
+          <img v-img-lazy="item.picture" alt="" />
           <p class="name">{{ item.title }}</p>
           <p class="desc">{{ item.alt }}</p>
         </RouterLink>
