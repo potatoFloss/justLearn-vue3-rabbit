@@ -1,13 +1,13 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from "node:url";
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import vueDevTools from "vite-plugin-vue-devtools";
 
 // 配置 element-plus 按需引入
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -16,29 +16,32 @@ export default defineConfig({
     vueDevTools(),
     // 配置 element-plus 按需引入
     AutoImport({
-      resolvers: [ElementPlusResolver({ importStyle: 'sass' })]
+      resolvers: [ElementPlusResolver({ importStyle: "sass" })],
     }),
     Components({
       resolvers: [
         ElementPlusResolver({
-          importStyle: 'sass'
+          importStyle: "sass",
           // directives: true,
           // version: "2.1.5",
-        })
-      ]
-    })
+        }),
+      ],
+    }),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
   },
   css: {
     preprocessorOptions: {
       scss: {
         // 自动导入定制化样式文件进行样式覆盖
-        additionalData: `@use "@/styles/element/index.scss" as *;`
-      }
-    }
-  }
-})
+        additionalData: `
+          @use "@/styles/element/index.scss" as *;
+          @use "@/styles/var.scss" as *;
+        `,
+      },
+    },
+  },
+});
