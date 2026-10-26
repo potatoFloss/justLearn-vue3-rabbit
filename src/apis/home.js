@@ -7,7 +7,6 @@ export function getBannerAPI() {
   });
 }
 
-// 获取新鲜好物数据
 /**
  * @description: 获取新鲜好物
  * @param {*}
@@ -16,5 +15,16 @@ export function getBannerAPI() {
 export function findNewAPI() {
   return httpInstance({
     url: "/home/new",
+  });
+}
+
+/**
+ * @description: 获取人气推荐
+ * @param {*}
+ * @return {*}
+ */
+export function getHotAPI() {
+  return httpInstance({
+    url: "home/hot",
   });
 }
