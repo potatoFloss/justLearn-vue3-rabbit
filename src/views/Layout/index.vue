@@ -1,11 +1,12 @@
-<template>
-  <div class="test">首页架子</div>
-  <!-- 二级路由接口 -->
-  <router-view></router-view>
-</template>
+<script setup>
+import LayoutNav from "./components/LayoutNav.vue";
+import LayoutHeader from "./components/LayoutHeader.vue";
+import LayoutFooter from "./components/LayoutFooter.vue";
+</script>
 
-<style lang="scss" scoped>
-.test {
-  color: $warnColor;
-}
-</style>
+<template>
+  <LayoutNav />
+  <LayoutHeader />
+  <RouterView />
+  <LayoutFooter />
+</template>
