@@ -1,10 +1,10 @@
-import httpInstance from "@/utils/http";
+import httpInstance from '@/utils/http'
 
 // 获取banner数据
 export function getBannerAPI() {
   return httpInstance({
-    url: "home/banner",
-  });
+    url: 'home/banner'
+  })
 }
 
 /**
@@ -14,8 +14,8 @@ export function getBannerAPI() {
  */
 export function findNewAPI() {
   return httpInstance({
-    url: "/home/new",
-  });
+    url: '/home/new'
+  })
 }
 
 /**
@@ -25,6 +25,17 @@ export function findNewAPI() {
  */
 export function getHotAPI() {
   return httpInstance({
-    url: "home/hot",
-  });
+    url: 'home/hot'
+  })
+}
+
+/**
+ * @description: 获取所有商品模块
+ * @param {*}
+ * @return {*}
+ */
+export function getGoodsAPI() {
+  return httpInstance({
+    url: '/home/goods'
+  })
 }
