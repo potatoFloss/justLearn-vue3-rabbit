@@ -2,15 +2,16 @@
 import { getTopCategoryAPI } from '@/apis/category.js'
 import { getBannerAPI } from '@/apis/home.js'
 import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, onBeforeRouteUpdate } from 'vue-router'
 import GoodsItem from '@/views/Home/components/GoodsItem.vue'
 
 const categoryData = ref({})
 const route = useRoute()
 const bannerList = ref([])
 
-const getCategory = async () => {
-  const res = await getTopCategoryAPI(route.params.id)
+// id = route.params.id 如果调用时没有传递id 则默认使用route.params.id作为id值
+const getCategory = async (id = route.params.id) => {
+  const res = await getTopCategoryAPI(id)
   console.log(res)
   categoryData.value = res.result
 }
@@ -22,6 +23,12 @@ const getBanner = async () => {
 onMounted(() => {
   getCategory()
   getBanner()
+})
+
+// 解决路由缓存问题-方法2：使用onBeforeRouteUpdate钩子函数
+// 当路由参数发生变化前执行的钩子函数 to为目标路由
+onBeforeRouteUpdate((to) => {
+  getCategory(to.params.id)
 })
 </script>
 
