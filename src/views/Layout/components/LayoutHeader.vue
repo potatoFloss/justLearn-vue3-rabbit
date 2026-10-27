@@ -1,7 +1,7 @@
 <script setup>
-import { useCategoryStore } from "@/stores/category.js";
+import { useCategoryStore } from '@/stores/category.js'
 
-const categoryStore = useCategoryStore();
+const categoryStore = useCategoryStore()
 </script>
 
 <template>
@@ -15,7 +15,7 @@ const categoryStore = useCategoryStore();
           <RouterLink to="/">首页</RouterLink>
         </li>
         <li v-for="item in categoryStore.categoryList" :key="item.id">
-          <RouterLink to="/">{{ item.name }}</RouterLink>
+          <RouterLink :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
         </li>
       </ul>
       <div class="search">
@@ -44,7 +44,9 @@ const categoryStore = useCategoryStore();
       height: 132px;
       width: 100%;
       text-indent: -9999px;
-      background: url("@/assets/images/logo.png") no-repeat center 18px / contain;
+      background: url('@/assets/images/logo.png') no-repeat center 18px /
+       
+        contain;
     }
   }
 

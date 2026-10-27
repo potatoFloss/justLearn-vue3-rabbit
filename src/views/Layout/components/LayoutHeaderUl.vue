@@ -1,11 +1,11 @@
 <script setup>
 // vueUse useScroll 监听滚动事件
-import { useScroll } from "@vueuse/core";
-import { useCategoryStore } from "@/stores/category.js";
+import { useScroll } from '@vueuse/core'
+import { useCategoryStore } from '@/stores/category.js'
 
-const categoryStore = useCategoryStore();
+const categoryStore = useCategoryStore()
 
-const { y } = useScroll(window);
+const { y } = useScroll(window)
 </script>
 
 <template>
@@ -18,7 +18,7 @@ const { y } = useScroll(window);
           <RouterLink to="/">首页</RouterLink>
         </li>
         <li v-for="item in categoryStore.categoryList" :key="item.id">
-          <RouterLink to="/">{{ item.name }}</RouterLink>
+          <RouterLink :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
         </li>
       </ul>
 
@@ -60,7 +60,7 @@ const { y } = useScroll(window);
   .logo {
     width: 200px;
     height: 80px;
-    background: url("@/assets/images/logo.png") no-repeat right 2px;
+    background: url('@/assets/images/logo.png') no-repeat right 2px;
     background-size: 160px auto;
   }
 
